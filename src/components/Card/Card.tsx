@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 
@@ -29,11 +30,10 @@ const Card: React.FC<cardsProps> = ({
   href,
 }) => {
   const [modalActive, setModalActive] = useState(false);
-  console.log(modalActive);
   const inner = (
     <>
       <Container onClick={() => setModalActive(true)}>
-        <div>{image && <CardImage src={image} alt="" />}</div>
+        <div>{image && <CardImage src={location.href + image} alt="" />}</div>
 
         <TextCardWrapper>
           <TitleCard dangerouslySetInnerHTML={{ __html: title }} />
